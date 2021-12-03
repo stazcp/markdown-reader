@@ -1,5 +1,5 @@
 import MarkdownInput from './MarkdownInput'
-import MarkdownOutput from './MarkdownOutput'
+import LivePreview from './LivePreview'
 import { Container } from '@mui/material'
 import AppContextProvider from '../state/appState'
 
@@ -8,7 +8,7 @@ function App() {
     <AppContextProvider>
       <Container maxWidth="lg" sx={{ pt: 5, flexDirection: 'row', display: 'flex' }}>
         <MarkdownInput />
-        <MarkdownOutput />
+        <LivePreview />
       </Container>
     </AppContextProvider>
   )
