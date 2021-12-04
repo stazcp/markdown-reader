@@ -3,11 +3,9 @@ import { HexColorPicker } from 'react-colorful'
 
 export default function BasicPopover({ anchorEl, handleClose, color, setColor }) {
   const open = Boolean(anchorEl)
-  const id = open ? 'simple-popover' : undefined
 
   return (
     <Popover
-      id={id}
       open={open}
       anchorEl={anchorEl}
       onClose={handleClose}

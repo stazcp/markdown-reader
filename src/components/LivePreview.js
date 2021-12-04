@@ -7,7 +7,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  Button,
   IconButton,
 } from '@mui/material'
 import { AppContext } from '../state/appState'
@@ -22,8 +21,6 @@ export default function MarkdownOutput() {
   const [font, setFont] = useState('roboto')
   const [color, setColor] = useState('#000000')
   const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
-  const id = open ? 'simple-popover' : undefined
 
   const openColorPicker = (event) => {
     setAnchorEl(event.currentTarget)
@@ -53,7 +50,7 @@ export default function MarkdownOutput() {
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <IconButton>
             <FormatColorTextIcon
-              aria-describedby={id}
+              aria-describedby="openColorpicker"
               variant="contained"
               onClick={openColorPicker}
             />
