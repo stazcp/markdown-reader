@@ -89,7 +89,9 @@ export default function MarkdownOutput() {
             color: `${color}`,
           }}
         >
-          <ReactMarkdown children={markedText} />
+          <Box sx={{ mt: -2 }}>
+            <ReactMarkdown children={markedText} />
+          </Box>
         </Box>
       </Box>
       <ColorPicker
