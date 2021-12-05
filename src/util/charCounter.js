@@ -17,7 +17,7 @@ export const countMarkdownChars = (str) => {
 const findHeaders = (line) => {
   let count = 0
   const h = line.match(header)
-  if (h) count += h[0].match(/#/g).length
+  if (h) count += h[0].match(/#/g).length + 1 // +1 for removed empty space count
   return count
 }
 
