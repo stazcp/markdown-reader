@@ -4,7 +4,7 @@ import { Container, Typography } from '@mui/material'
 import { AppContext } from '../state/appState'
 
 export default function EmptyTextarea() {
-  const { setMarkedText, markedText } = useContext(AppContext)
+  const { setMarkedText, markedText, charCount } = useContext(AppContext)
 
   return (
     <Container maxWidth="sm">
@@ -13,7 +13,7 @@ export default function EmptyTextarea() {
       </Typography>
       <TextField
         id="standard-multiline-flexible"
-        helperText="try # H1 **bold** *italic* or /"
+        helperText={`Chars: ${charCount}`}
         multiline
         value={markedText}
         placeholder="Input your Markup here..."

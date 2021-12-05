@@ -6,7 +6,10 @@ import AppContextProvider from '../state/appState'
 function App() {
   return (
     <AppContextProvider>
-      <Container maxWidth="lg" sx={{ pt: 5, flexDirection: 'row', display: 'flex' }}>
+      <Container
+        maxWidth="lg"
+        sx={{ pt: 5, flexDirection: 'row', display: 'flex', width: '100vw' }}
+      >
         <MarkdownInput />
         <LivePreview />
       </Container>

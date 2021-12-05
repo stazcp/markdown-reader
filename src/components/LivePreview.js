@@ -34,8 +34,6 @@ export default function MarkdownOutput() {
     setFont(event.target.value)
   }
 
-  console.log(color)
-
   return (
     <Container maxWidth="sm">
       <Box
@@ -48,12 +46,8 @@ export default function MarkdownOutput() {
       >
         <Typography variant="h5">Preview</Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-          <IconButton>
-            <FormatColorTextIcon
-              aria-describedby="openColorpicker"
-              variant="contained"
-              onClick={openColorPicker}
-            />
+          <IconButton onClick={openColorPicker}>
+            <FormatColorTextIcon aria-describedby="openColorpicker" variant="contained" />
           </IconButton>
           <Box sx={{ minWidth: 120, mb: 1, ml: 1 }}>
             <FormControl fullWidth>
