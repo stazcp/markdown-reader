@@ -1,13 +1,19 @@
 import React, { useContext } from 'react'
 import TextField from '@mui/material/TextField'
-import { Container, Typography } from '@mui/material'
+import { Typography, Box } from '@mui/material'
 import { AppContext } from '../state/appState'
 
 export default function EmptyTextarea() {
   const { setMarkedText, markedText, charCount } = useContext(AppContext)
 
   return (
-    <Container maxWidth="sm">
+    <Box
+      sx={{
+        minWidth: { xs: '95vw', sm: '300px' },
+        width: { xs: '95vw', sm: '500px' },
+        pr: { xs: 0, sm: 1 },
+      }}
+    >
       <Typography variant="h5" sx={{ pb: 2, pt: 2 }}>
         Markdown Text
       </Typography>
@@ -21,7 +27,12 @@ export default function EmptyTextarea() {
         variant="outlined"
         rows={20}
         fullWidth
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            background: 'white',
+          },
+        }}
       />
-    </Container>
+    </Box>
   )
 }

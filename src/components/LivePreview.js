@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react'
 import {
-  Container,
   Typography,
   Box,
   Select,
@@ -8,17 +7,19 @@ import {
   FormControl,
   InputLabel,
   IconButton,
+  NativeSelect,
 } from '@mui/material'
 import { AppContext } from '../state/appState'
 import ReactMarkdown from 'react-markdown'
 import '@fontsource/aclonica'
 import '@fontsource/shojumaru'
+import '@fontsource/aguafina-script'
 import ColorPicker from './ColorPicker'
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
 
 export default function MarkdownOutput() {
   const { markedText } = useContext(AppContext)
-  const [font, setFont] = useState('roboto')
+  const [font, setFont] = useState('inherit')
   const [color, setColor] = useState('#000000')
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -35,7 +36,12 @@ export default function MarkdownOutput() {
   }
 
   return (
-    <Container maxWidth="sm">
+    <Box
+      sx={{
+        minWidth: { xs: '95vw', sm: '300px' },
+        width: { xs: '95vw', sm: '500px' },
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
@@ -51,15 +57,18 @@ export default function MarkdownOutput() {
           </IconButton>
           <Box sx={{ minWidth: 120, mb: 1, ml: 1 }}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Font</InputLabel>
+              <InputLabel id="font-select-label">Font</InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="font-select-label"
+                id="font-select"
                 value={font}
                 label="font"
                 onChange={handleFontChange}
+                sx={{ background: 'white' }}
               >
-                <MenuItem value={'roboto'}>Roboto</MenuItem>
+                <MenuItem value={'inherit'}>Default</MenuItem>
+                <MenuItem value={'roboto, sans-serif'}>Roboto</MenuItem>
+                <MenuItem value={'Aguafina Script'}>Aguafina</MenuItem>
                 <MenuItem value={'aclonica'}>Aclonica</MenuItem>
                 <MenuItem value={'shojumaru'}>Shojumaru</MenuItem>
               </Select>
@@ -87,6 +96,8 @@ export default function MarkdownOutput() {
             overflow: 'auto',
             fontFamily: font,
             color: `${color}`,
+            backgroundColor: 'white',
+            borderRadius: '4px',
           }}
         >
           <Box sx={{ mt: -2 }}>
@@ -100,6 +111,6 @@ export default function MarkdownOutput() {
         color={color}
         setColor={setColor}
       />
-    </Container>
+    </Box>
   )
 }

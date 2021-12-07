@@ -1,18 +1,27 @@
 import MarkdownInput from './MarkdownInput'
 import LivePreview from './LivePreview'
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
 import AppContextProvider from '../state/appState'
 
 function App() {
   return (
     <AppContextProvider>
-      <Container
-        maxWidth="lg"
-        sx={{ pt: 5, flexDirection: 'row', display: 'flex', width: '100vw' }}
+      <Box
+        sx={{
+          pt: { xs: 2, sm: 5 },
+          pl: { xs: 0, sm: 2 },
+          pr: { xs: 0, sm: 2 },
+          // pb: 2,
+          flexDirection: { xs: 'column', sm: 'row' },
+          display: 'flex',
+          justifyContent: { xs: 'center', sm: 'space-evenly' },
+          width: { xs: '100%', sm: 'auto' },
+          alignItems: { xs: 'center', sm: 'flex-start' },
+        }}
       >
         <MarkdownInput />
         <LivePreview />
-      </Container>
+      </Box>
     </AppContextProvider>
   )
 }
