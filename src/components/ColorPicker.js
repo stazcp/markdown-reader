@@ -1,4 +1,4 @@
-import { Popover, Box } from '@mui/material'
+import { Popover } from '@mui/material'
 import { HexColorPicker } from 'react-colorful'
 
 export default function BasicPopover({ anchorEl, handleClose, color, setColor }) {

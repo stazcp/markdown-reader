@@ -7,7 +7,6 @@ import {
   FormControl,
   InputLabel,
   IconButton,
-  NativeSelect,
 } from '@mui/material'
 import { AppContext } from '../state/appState'
 import ReactMarkdown from 'react-markdown'
